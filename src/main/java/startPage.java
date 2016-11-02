@@ -5,13 +5,17 @@ import javax.faces.bean.ManagedBean;
  */
 @ManagedBean
 public class startPage {
-    public String welcomeText = "Welcome! ;)";
+    public String letters;
 
-    public String getWelcomeText() {
-        return welcomeText;
+    public String getLetters() {
+        return letters;
     }
 
-    public void setWelcomeText(String welcomeText) {
-        this.welcomeText = welcomeText;
+    public void setLetters(String letters) {
+        this.letters = letters;
+    }
+
+    public String findWords() {
+        return letters;
     }
 }
