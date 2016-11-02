@@ -11,15 +11,19 @@
     <h:outputStylesheet name="main.css"/>
 </h:head>
 <h:body>
-    <p:panelGrid>
-        <h:panelGrid columns="2" cellpadding="5">
-            <h:outputLabel for="letters" value="Posiadane litery:" />
-            <p:inputText id="letters" value="#{startPage.letters}" required="true" label="letters" />
+    <h:form>
+        <p:panelGrid>
+            <h:panelGrid columns="2" cellpadding="5">
+                <h:outputLabel for="letters" value="Posiadane litery:" />
+                <p:inputText id="letters" value="#{startPage.letters}" required="true" label="letters" />
 
-            <p:commandButton value="Szukaj" action="#{startPage.findWords}"/>
-            <h:outputText rendered="#{startPage.findWords ne null}" value="#{startPage.findWords}" />
+                <p:commandButton value="Szukaj" action="#{startPage.search(startPage.letters)}"/>
 
-        </h:panelGrid>
-    </p:panelGrid>
+            </h:panelGrid>
+        </p:panelGrid>
+    </h:form>
+    <ui:repeat value="#{startPage.search(startPage.letters)}" var="value">
+        #{value} <br />
+    </ui:repeat>
 </h:body>
 </html>
